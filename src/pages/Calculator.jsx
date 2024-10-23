@@ -1,6 +1,6 @@
 import Input from "../components/InputCalculator";
 import Buttons from "../components/Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CalculatorProvider } from "../Contexts";
 import History from "../components/History";
 
@@ -36,6 +36,7 @@ const Calculator = () => {
   };
 
   const clearHistory = () => {
+    localStorage.removeItem('history');
     setHistory([]);
   }
 
@@ -53,6 +54,15 @@ const Calculator = () => {
 
     setInput(input + number);
   };
+
+  useEffect(()=>{
+    const history = JSON.parse(localStorage.getItem("history"));
+    setHistory(history);
+  },[]);
+
+  useEffect(()=>{
+    localStorage.setItem("history",JSON.stringify(history));
+  },[history]);
 
   return (
     <CalculatorProvider value={{ input, handle, clear, result, square, squareRoot, history, clearHistory }}>

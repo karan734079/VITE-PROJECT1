@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen justify-center bg-white text-black">
+    <div className="flex flex-col items-center min-h-screen pb-40 justify-center bg-white text-black">
       <header className="mb-8">
         <h1 className="text-5xl font-bold">My Projects</h1>
         <p className="text-lg mt-2 flex items-center justify-center">Showcasing my work in React</p>
