@@ -10,7 +10,7 @@ export const calculatorSlice = createSlice({
     result: (state) => {
       try {
         const result = eval(state.input);
-        const newOutput = result % 1 === 0 ? result : result.toFixed(2);
+        const newOutput =result % 1 === 0 ?result : result.toFixed(2);
         state.history.push({ expression: state.input, result: newOutput });
         state.input = newOutput;
       } catch {
@@ -22,10 +22,7 @@ export const calculatorSlice = createSlice({
       const currentValue = parseFloat(state.input);
       const result = Math.sqrt(currentValue);
       const newOutput = result % 1 === 0 ? result : result.toFixed(2);
-      state.history.push({
-        expression: `√(${currentValue})`,
-        result: newOutput,
-      });
+      state.history.push({ expression: `√(${currentValue})`, result: newOutput });
       state.input = newOutput;
     },
 
@@ -33,10 +30,7 @@ export const calculatorSlice = createSlice({
       const currentValue = parseFloat(state.input);
       const result = currentValue * currentValue;
       const newOutput = result % 1 === 0 ? result : result.toFixed(2);
-      state.history.push({
-        expression: `(${currentValue})²`,
-        result: newOutput,
-      });
+      state.history.push({ expression: `(${currentValue})²`, result: newOutput });
       state.input = newOutput;
     },
 
@@ -45,12 +39,12 @@ export const calculatorSlice = createSlice({
     },
 
     handle: (state, action) => {
-      const lastChar = state.input[state.input.length - 1];
-      const operators = ["+", "-", "*", "/", "."];
+        const lastChar = state.input[state.input.length - 1];
+        const operators = ["+", "-", "*", "/", "."];
 
-      if (operators.includes(lastChar)) {
-        return;
-      }
+    if (operators.includes(lastChar) && operators.includes(action.payload)) {
+      return;
+    }
       state.input += action.payload;
     },
 
@@ -60,7 +54,7 @@ export const calculatorSlice = createSlice({
   },
 });
 
-export const { result, squareRoot, square, clear, handle, clearHistory } =
+export const { result, squareRoot, square, clear, handle , clearHistory } =
   calculatorSlice.actions;
 
 export default calculatorSlice.reducer;
