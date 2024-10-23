@@ -10,6 +10,7 @@ import TodoList from './pages/TodoList'
 import CounterRedux from './pages/CounterRedux';
 import { Provider } from 'react-redux';
 import { appStore } from './store/appStore';
+import CalculatorRedux from './pages/CalculatorRedux';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/todoList" element={<TodoList />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/counterRedux" element={<CounterRedux />} />
+        <Route path="/calculatorRedux" element={<CalculatorRedux />} />
       </Routes>
       <Footer />
     </Provider>

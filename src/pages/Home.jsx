@@ -30,13 +30,18 @@ const projects = [
   },
   {
     title: 'Calculator',
-    description: 'Interactive calculator built with React for performing basic arithmetic operations seamlessly.',
+    description: 'Interactive Calculator built with React for performing basic arithmetic operations seamlessly.',
     path : '/calculator'
   },
   {
     title: 'Counter in Redux',
-    description: 'Simple counter app built with React using Redux for incrementing and decrementing values effortlessly.',
+    description: 'Simple Counter app built with React using Redux for incrementing and decrementing values effortlessly.',
     path : '/counterRedux'
+  },
+  {
+    title: 'Calculator in Redux',
+    description: 'Interactive Calculator built with React in Redux for performing basic arithmetic operations seamlessly.',
+    path : '/calculatorRedux'
   },
 ];
 

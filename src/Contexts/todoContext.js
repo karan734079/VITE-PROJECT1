@@ -20,7 +20,7 @@ export const CalculatorContext = createContext({
   handle: () => {},
   clear: () => {},
   result: () => {},
-  square: () => {},
+  square: () => {}, 
   squareRoot: () => {},
   clearHistory: () => {},
 });
