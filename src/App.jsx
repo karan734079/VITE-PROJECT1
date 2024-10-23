@@ -7,12 +7,14 @@ import Calculator from './pages/Calculator'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import TodoList from './pages/TodoList'
-import Counter from './pages/Counter';
+import CounterRedux from './pages/CounterRedux';
+import { Provider } from 'react-redux';
+import { appStore } from './store/appStore';
 
 function App() {
 
   return (
-    <>
+    <Provider store={appStore} >
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,10 +22,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/todoList" element={<TodoList />} />
         <Route path="/calculator" element={<Calculator />} />
-        <Route path="/counter" element={<Counter />} />
+        <Route path="/counterRedux" element={<CounterRedux />} />
       </Routes>
       <Footer />
-    </>
+    </Provider>
   )
 }
 

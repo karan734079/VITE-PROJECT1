@@ -34,9 +34,9 @@ const projects = [
     path : '/calculator'
   },
   {
-    title: 'Counter',
-    description: 'Simple counter app built with React for incrementing and decrementing values effortlessly.',
-    path : '/counter'
+    title: 'Counter in Redux',
+    description: 'Simple counter app built with React using Redux for incrementing and decrementing values effortlessly.',
+    path : '/counterRedux'
   },
 ];
 
