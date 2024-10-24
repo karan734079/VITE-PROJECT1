@@ -11,6 +11,7 @@ import CounterRedux from './pages/CounterRedux';
 import { Provider } from 'react-redux';
 import { appStore } from './store/appStore';
 import CalculatorRedux from './pages/CalculatorRedux';
+import TodoListRedux from './pages/TodoListRedux';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/counterRedux" element={<CounterRedux />} />
         <Route path="/calculatorRedux" element={<CalculatorRedux />} />
+        <Route path="/todolistRedux" element={<TodoListRedux />} />
       </Routes>
       <Footer />
     </Provider>

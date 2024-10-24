@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { result, squareRoot, square, clear, handle } from "../store/calculatorSlice";
 
 
-const CalculatorReduxButtons = () => {
+const CalculatorReduxButtons = () => { 
   const dispatch = useDispatch();
 
   const numbers = ["1", "2", "3", "+", "-", "4", "5", "6", "*", "/", "7", "8", "9", `x²`, `√x`, '.', '0', 'C', '='];

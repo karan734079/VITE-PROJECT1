@@ -6,7 +6,7 @@ const CalculatorReduxHistory = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="mt-4 p-4 border rounded-md shadow-md bg-gray-100 max-h-40 overflow-y-auto scrollbar-hidden">
+    <div className="mt-4 p-4 border  rounded-md shadow-md bg-gray-100 max-h-40 overflow-y-auto scrollbar-hidden">
       <div className="flex justify-between">
       <h2 className="text-lg font-semibold mt-1">History</h2>
       {history.length > 0 && (

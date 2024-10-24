@@ -25,8 +25,9 @@ const Header = () => {
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg z-10">
                 <a href="/todolist" className="block px-4 py-2 hover:bg-gray-200 transition">ToDo List</a>
                 <a href="/calculator" className="block px-4 py-2 hover:bg-gray-200 transition">Calculator</a>
-                <a href="/counter" className="block px-4 py-2 hover:bg-gray-200 transition">Counter</a>
+                <a href="/counterRedux" className="block px-4 py-2 hover:bg-gray-200 transition">Counter In Redux</a>
                 <a href="/calculatorRedux" className="block px-4 py-2 hover:bg-gray-200 transition">Calculator in Redux</a>
+                <a href="/todolistRedux" className="block px-4 py-2 hover:bg-gray-200 transition">ToDo List in Redux</a>
               </div>
             )}
           </div>

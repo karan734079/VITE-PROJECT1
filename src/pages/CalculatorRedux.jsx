@@ -9,7 +9,7 @@ const calculatorRedux = () => {
         <CalculatorReduxinput />
         <CalculatorReduxButtons />
         <CalculatorReduxHistory />
-      </div>
+      </div> 
     </div>
   );
 };

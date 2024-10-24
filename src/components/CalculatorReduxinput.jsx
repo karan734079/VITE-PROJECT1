@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 const CalculatorReduxinput = () => {
   const input = useSelector((state) => state.calculator.input);
   
-  return (
+  return ( 
     <input
       type="text"
       value={input}
