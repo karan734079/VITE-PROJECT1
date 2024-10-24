@@ -43,6 +43,11 @@ const projects = [
     description: 'Interactive Calculator built with React in Redux for performing basic arithmetic operations seamlessly.',
     path : '/calculatorRedux'
   },
+  {
+    title: 'TO DO List in Redux',
+    description: 'Simple and intuitive To Do List app built with React in Redux for managing tasks efficiently.',
+    path : '/todolistRedux'
+  },
 ];
 
 export default Home;

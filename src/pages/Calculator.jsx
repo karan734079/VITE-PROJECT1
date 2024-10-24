@@ -66,8 +66,8 @@ const Calculator = () => {
 
   return (
     <CalculatorProvider value={{ input, handle, clear, result, square, squareRoot, history, clearHistory }}>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-blue-500">
-        <div className="bg-white rounded-lg shadow-lg p-6 max-w-xs w-full">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-blue-500 p-4">
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-xs w-full">
           <Input />
           <Buttons />
           <History />

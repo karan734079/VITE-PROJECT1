@@ -13,7 +13,7 @@ const CalculatorReduxHistory = () => {
         <button
           onClick={() => dispatch(clearHistory())}
           className="mt-1 bg-red-500 text-white py-1 px-3 rounded-md transition duration-200 hover:bg-red-600 focus:outline-none"
-        >
+        > 
           Clear
         </button>
       )}
