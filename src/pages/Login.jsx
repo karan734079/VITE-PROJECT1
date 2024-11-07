@@ -8,24 +8,24 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const {register, handleSubmit} = useForm()
-    const [error, setError] = useState('')
+  const dispatch = useDispatch()
+  const { register, handleSubmit } = useForm()
+  const [error, setError] = useState('')
 
-    const onSubmit = async(data) => {
-        setError("")
-        try {
-            const session = await authservice.login(data)
-            if(session){
-                const userData = await authservice.getCurrentUser()
-            
-            if(userData) dispatch(login(userData))
-                navigate("/")
-        }
-        } catch (error) {
-            setError(error.message)
-          }
-        }
+  const onSubmit = async (data) => {
+    setError("");
+    try {
+      const session = await authservice.login(data);
+      if (session) {
+        const userData = await authservice.getCurrentUser();
+        if (userData) dispatch(login(userData));
+        navigate("/");
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <div className="h-screen flex flex-col lg:flex-row">
       <div className="flex w-1/2 bg-gradient-to-r from-teal-500 to-blue-500 justify-around items-center invisible lg:visible">
@@ -90,7 +90,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-2 rounded-2xl mt-4"
+            className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-2 rounded-2xl mt-4 hover:bg-gradient-to-r hover:from-teal-700 hover:to-blue-700"
           >
             Login
           </button>

@@ -15,23 +15,61 @@ import Register from './pages/Register';
 import Rps from './pages/Rps';
 import GetStarted from './pages/GetStarted';
 import Home from './pages/Home';
-import { useSelector } from 'react-redux'; 
-
+import { useDispatch, useSelector } from 'react-redux'; 
 import { Provider } from 'react-redux';
 import { appStore } from './store/appStore';
+import NetflixGpt from './components/NetflixGpt';
+import MyYoutube from './components/MyYoutube';
+import { useEffect } from 'react';
+import { setAuthState , setAuthLoading} from './store/authSlice';
+import authservice from './appWrite/auth';
+import ShimmerLoader from './components/Shimmer';
+// import ShimmerLoader from './components/Shimmer';
 
-// ProtectedRoute wrapper for logged-in users
 const ProtectedRoute = ({ element }) => {
-  const { status } = useSelector((state) => state.auth);
+  const { status, loading } = useSelector((state) => state.auth);
+
+  if (loading) {
+    return <div>Loading...</div>; // Show loading state while auth is being checked
+  }
+
   return status ? element : <Navigate to="/get-started" />;
 };
 
 function App() {
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    const fetchAuthState = async () => {
+      const authToken = localStorage.getItem('authToken');
+
+      if (authToken) {
+        try {
+          const userData = await authservice.getCurrentUser();
+          dispatch(setAuthState({
+            status: true,
+            userData,
+          }));
+        } catch {
+          dispatch(setAuthState({ status: false, userData: null }));
+        }
+      } else {
+        dispatch(setAuthLoading(false)); // No token, set loading to false
+      }
+    };
+
+    fetchAuthState();
+  }, [dispatch]);
+
+  if (loading) {
+    return <div><ShimmerLoader /></div>; // Show a loading screen or spinner if loading
+  }
+
   return (
-    <Provider store={appStore}>
+    <>
       <Header />
       <Routes>
-        {/* Define routes here */}
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/about" element={<About />} />
@@ -45,16 +83,20 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/rps" element={<ProtectedRoute element={<Rps />} />} />
+        <Route path="/netflixGpt" element={<ProtectedRoute element={<NetflixGpt />} />} />
+        <Route path="/my-youtube" element={<ProtectedRoute element={<MyYoutube />} />} />
       </Routes>
       <Footer />
-    </Provider>
+    </>
   );
 }
 
 export default function AppWrapper() {
   return (
     <BrowserRouter>
+    <Provider store={appStore}>
       <App />
+      </Provider>
     </BrowserRouter>
   );
 }

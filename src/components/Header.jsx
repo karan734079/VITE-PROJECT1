@@ -18,9 +18,9 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white text-gray-800 p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">MYPROJECTS</h1>
+    <header className="bg-white text-gray-800 p-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center text-center">
+        <h1 className="text-2xl font-bold">MYPORTFOLIO</h1>
         <nav className="flex space-x-8">
           <Link to="/" className="hover:text-gray-600 transition">Home</Link>
           <Link to="/about" className="hover:text-gray-600 transition">About</Link>

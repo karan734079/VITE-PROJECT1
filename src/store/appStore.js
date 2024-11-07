@@ -10,7 +10,7 @@ export const appStore = configureStore({
         counter : counterReducer,
         calculator : calculatorReducer,
         todo : todoReducer,
-        weather : weatherReducer,
+        weather : weatherReducer, 
         auth : authReducer,
     }, 
 }); 

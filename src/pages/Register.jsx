@@ -113,7 +113,7 @@ const Register = () => {
 
           <button
 
-            className="block w-full bg-gradient-to-r from-teal-500 to-blue-500 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+            className="block w-full bg-gradient-to-r from-teal-500 to-blue-500 hover:bg-gradient-to-r hover:from-teal-700 hover:to-blue-700 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
             type="submit">
             Register
           </button>

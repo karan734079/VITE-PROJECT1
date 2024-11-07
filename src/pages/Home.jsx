@@ -45,6 +45,16 @@ const Home = () => {
       description: 'Simple and intuitive Rock, Paper, Scissors built with React for entertainment.',
       path: '/rps',
     },
+    {
+      title:'NetflixGpt',
+      description: 'Developed a Netflix-style app with ReactJS, Firebase, Redux, Gemini API, and responsive UI.',
+      path:'/netflixGpt'
+    },
+    {
+      title:'My-Youtube',
+      description: 'Developed YouTube clone with ReactJS, Redux, TailwindCSS, and YouTube API.',
+      path:'/my-youtube'
+    }
   ];
 
   return (
